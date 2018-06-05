@@ -1,65 +1,35 @@
 <div class="school__header">
   <h1 class="school__header--text">{{ schoolDetails?.School_name }}</h1>
-  <h3>{{ schoolDetails?.School_subtype }}</h3>
+  <h3 *ngIf="schoolDetails?.School_subtype">{{ schoolDetails?.School_subtype }}</h3>
 </div>
 
-<div class="container school__body">
-  <div class="row">
-    <div class="col-12">
-      <div class="school__body--details">
-        <div class="school__body--details--item">
-          <p>
-            <span>Suburb:</span>&nbsp;{{ schoolDetails?.Town_suburb }}
-          </p>
-        </div>
-        <div class="school__body--details--item">
-          <p>
-            <span>Number of Students:&nbsp;</span>{{ schoolDetails?.Student_number}}
-          </p>
-        </div>
-        <div class="school__body--details--item">
-          <p>
-            <span>Non-English Background Pct:&nbsp;</span>{{ schoolDetails?.LBOTE_pct }}
-          </p>
-        </div>
-        <div class="school__body--details--item">
-          <p>
-            <span>Indigenous Pct:&nbsp;</span>{{ schoolDetails?.Indigenous_pct }}
-          </p>
-        </div>
-        <div class="school__body--details--item">
-          <p>
-            <span>Gender:&nbsp;</span>{{ schoolDetails?.School_gender }}
-          </p>
-        </div>
-        <div class="school__body--details--item">
-          <p>
-            <span>School Type:&nbsp;</span>{{ schoolDetails?.School_subtype }}
-          </p>
-        </div>
-
+<div class="school__body">
+  <div class="container">
+    <div class="row school__body--details">
+      <div class="col-12">
+        <app-table-detail [schoolDetails]="schoolDetails"></app-table-detail>
       </div>
     </div>
-  </div>
 
-  <div class="row school__contact">
-    <div class="col-12">
-      <h4 class="school__contact--headerText">Contact Us</h4>
-      <div class="school__contact--details">
-        <p>
-          <span>Phone: </span> {{ schoolDetails?.Phone }}
-        </p>
-        <p>
-          <span>Fax: </span> {{ schoolDetails?.Fax }}
-        </p>
-        <p>
-          <span>Email: </span> {{ schoolDetails?.Email }}
-        </p>
-        <p>
-          <span>Address: </span> {{ schoolDetails?.Street + ", " + schoolDetails?.Town_suburb + ", " + schoolDetails?.Postcode + ",
-          NSW, Australia"}}
-        </p>
+    <div class="row school__contact">
+      <div class="col-12">
+        <h4 class="school__contact--headerText">Contact Us</h4>
+        <div class="school__contact--details">
+          <p *ngIf="schoolDetails?.Phone">
+            <span>Phone: </span> {{ schoolDetails?.Phone }}
+          </p>
+          <p *ngIf="schoolDetails?.Fax">
+            <span>Fax: </span> {{ schoolDetails?.Fax }}
+          </p>
+          <p *ngIf="schoolDetails?.Email">
+            <span>Email: </span> {{ schoolDetails?.Email }}
+          </p>
+          <p>
+            <span>Address: </span> {{ schoolDetails?.Street + ", " + schoolDetails?.Town_suburb + ", " + schoolDetails?.Postcode
+            + ", NSW, Australia"}}
+          </p>
 
+        </div>
       </div>
     </div>
   </div>

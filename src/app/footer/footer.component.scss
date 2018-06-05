@@ -1,0 +1,38 @@
+
+
+
+.school__footer {
+    background-color: #092974;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.school__footer--menu {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    min-height: 40px;
+    .school__footer--menuItem {
+        display: block;
+        padding: 5px;
+        &:hover {
+            background-color: rgba(9, 41, 116, 0.5);
+        }
+
+
+        a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+}
+
+
+.school__footer--footNote { 
+    text-align: center;
+
+    p span {
+        font-style: italic;
+    }
+}

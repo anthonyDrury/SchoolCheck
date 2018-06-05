@@ -2,19 +2,23 @@
   <div class="row">
     <div class="col-12 schoolSearch__header">
       <input class="schoolSearch__header--searchbar" type='text' [(ngModel)]='listFilter' />
-      <p class="schoolSearch__header--infoText">Click on the school name for further detals</p>
+      <p class="schoolSearch__header--infoText">
+        <strong>Click on the school name for further detals</strong>
+      </p>
     </div>
   </div>
   <div class="row">
     <div class="col-12 schoolSearch__compare">
       <button [ngClass]="[displayCompareBtn, 'schoolSearch__compare--button']" (click)="compare()">COMPARE</button>
-      <p>Selected Schools will display below the table</p>
+      <p>
+        <strong>Selected Schools will display below the table</strong>
+      </p>
     </div>
   </div>
   <div class="row">
     <div class="col-12 schoolSearch__list">
       <div class='table-responsive'>
-        <table class='table' *ngIf='filteredSchools && filteredSchools.length'>
+        <table class='table' *ngIf='filteredSchools && filteredSchools.length else loading'>
           <thead>
             <tr>
               <th>School Name</th>
@@ -34,6 +38,9 @@
             </tr>
           </tbody>
         </table>
+        <ng-template #loading>
+          <p class="schoolSearch__list--loading">Loading Data</p>
+        </ng-template>
       </div>
     </div>
   </div>
@@ -41,7 +48,6 @@
     <div class="col-12 schoolSearch__preview" *ngIf='compareSchoolsNames && compareSchoolsNames.length else defaultContent'>
       <div *ngFor='let school of compareSchoolsNames' class="schoolSearch__preview--school">
         <p>{{ school }}</p>
-        <button (click)="removeItem(school)">&#10060;</button>
       </div>
     </div>
     <ng-template #defaultContent>

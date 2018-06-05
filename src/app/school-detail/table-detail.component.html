@@ -1,0 +1,144 @@
+<div class='table-responsive'>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>
+            <p>Details</p>
+          </th>
+          <th>
+            <p>Data</p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Shared -->
+        <tr>
+          <td>
+            <p>Suburb:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.Town_suburb }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Gender:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.School_gender }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Level of Schooling:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.Level_of_schooling }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Electorate:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.Fed_electorate }}</p>
+          </td>
+        </tr>
+  
+        <!-- Gov only -->
+        <tr *ngIf="schoolDetails?.Student_number">
+          <td>
+            <p>Number of Students:</p>
+          </td>
+          <td>
+            <p>{{schoolDetails?.Student_number}}</p>
+          </td>
+        </tr>
+        <tr *ngIf="schoolDetails?.School_subtype">
+          <td>
+            <p>SchoolType:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.School_subtype }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="schoolDetails?.LBOTE_pct">
+          <td>
+            <p>Non-English %:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.LBOTE_pct }}</p>
+          </td>
+        </tr>
+  
+        <tr *ngIf="schoolDetails?.School_specialty_type">
+          <td>
+            <p>School Specialty:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.School_specialty_type }}</p>
+          </td>
+        </tr>
+  
+        <tr *ngIf="schoolDetails?.Indigenous_pct">
+          <td>
+            <p>Indigenous Pct:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.Indigenous_pct }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="schoolDetails?.Intensive_english_centre">
+          <td>
+            <p>English Center:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.Intensive_english_centre }}</p>
+          </td>
+        </tr>
+  
+  
+        <!-- Priv only -->
+        <tr *ngIf="schoolDetails?.Sector">
+          <td>
+            <p>Sector:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.Sector }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="schoolDetails?.School_affiliation">
+          <td>
+            <p>Affliction:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.School_affiliation }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="schoolDetails?.Campus_level">
+          <td>
+            <p>Campus Level:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.Campus_level }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="schoolDetails?.Dicosese">
+          <td>
+            <p>Dicosese:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.Dicosese }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="schoolDetails?.Dicosese">
+          <td>
+            <p>Dicosese:</p>
+          </td>
+          <td>
+            <p>{{ schoolDetails?.Dicosese }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

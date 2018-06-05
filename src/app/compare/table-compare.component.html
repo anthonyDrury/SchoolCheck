@@ -1,0 +1,124 @@
+<div class='table-responsive'>
+  <table class='table' *ngIf='schoolCompareDetails && schoolCompareDetails.length'>
+    <thead>
+      <tr>
+        <th>
+          <p>Details</p>
+        </th>
+        <th *ngFor='let schoolArray of schoolCompareDetails'>
+          <p>{{ schoolArray.School_name }}</p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Shared -->
+      <tr>
+        <th>
+          <p>Gender:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school.School_gender}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>Specialty:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school?.School_specialty_type ? school?.School_specialty_type : 'NA'}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>Electorate:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school.Fed_electorate}}</p>
+        </td>
+      </tr>
+      <!-- Gov Only -->
+      <tr>
+        <th>
+          <p>Subtype:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{ school?.School_subtype ? school?.School_subtype : 'NA'}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>Number of Students:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school.Student_number ? school?.Student_number : 'NA'}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>English_Centre:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school?.Intensive_english_centre ? school?.Intensive_english_centre : 'NA'}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>Indigenous %:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school?.Indigenous_pct ? school?.Indigenous_pc : 'NA'}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>Late Opening:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school?.Late_opening_school ? school?.Late_opening_school : 'NA'}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>Selective:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school?.Selective_school ? school?.Selective_school : 'NA'}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>Electorate:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school?.Electorate ? school?.Electorate : 'NA'}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>LBOTE %:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails'>
+          <p>{{school.LBOTE_pct ? school?.LBOTE_pct : 'NA'}}</p>
+        </td>
+      </tr>
+      <!--priv-->
+      <tr>
+        <th>
+          <p>Affiliation:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school?.School_affiliation ? school?.School_affiliation : 'NA'}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>Campus level:</p>
+        </th>
+        <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
+          <p>{{school?.Campus_level ? school?.Campus_level : 'NA'}}</p>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

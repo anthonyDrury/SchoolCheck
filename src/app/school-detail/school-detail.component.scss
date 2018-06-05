@@ -1,5 +1,5 @@
 .school__header {
-    background-color: #FF5600;
+    background-color: #1240AB;
     width: 100%;
     padding: 20px;
 }
@@ -8,37 +8,35 @@
     font-weight: 700;
 }
 
-.school__body--details {
-    padding-top: 30px;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
-    p {
-        padding: 10px;
-        span {
-            font-weight: 700;
-        }
-    }
-
-
-    .school__body--details--item {
-        width: 200px;
-        background-color: #FFC500;
-        margin: 5px;
+.school__body {
+    padding-bottom: 100px;
+    .school__body--details {
+        margin-top: 30px;
+        padding: 25px 0px;
+        
     }
 }
 
-.school__body--map {
-    width: 450px;
-    padding-top: 30px;
+.school__contact {
+    background-color: #FFC500;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px 0;
+    color: black;
+    margin-bottom: 30px;
+    .school__contact--headerText {
+        text-align: center;
+        font-weight: 700;
+    }
+    .school__contact--details p span {
+        font-weight: 700;
+    }
 }
 
-.school__contact--headerText {
-    padding-top: 30px;
-    text-align: center;
-    font-weight: 700;
-}
-
-.school__contact--details p span {
-    font-weight: 700;
+@media (max-width: 768px) {
+    .school__body {
+        padding-bottom: 220px;
+    }
 }

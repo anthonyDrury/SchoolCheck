@@ -9,6 +9,11 @@ Shared CSS
 }
 
 
+html,
+body {
+    height: 100%;
+}
+
 .display-none{
     display: none !important;
 }
@@ -19,10 +24,12 @@ Shared CSS
 app-root {
     display: block;
     width: 100%;
+    min-height: 100%;
+    position: relative;
 }
 
 body {
-    background-color: #0D58A6;
+    background-color: #009999;
     color: rgba(255, 255, 255, 0.8);
 
     /*http://www.paletton.com/#uid=33A0u0kw0w0jyC+oRxVy4oIDfjr*/

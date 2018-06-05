@@ -1,32 +1,9 @@
 .schoolCompare {
-    table {
-        margin-top:20px; 
-        border-radius: 5px 5px 5px 5px;
-    }
-    th {
-        background-color: #FF5600;
-        color: white;
-        border: none;
-        border-top: none;
-        &:hover, :focus {
-            background-color: #9B3400;
-        }
-    }
-    td {
-        background-color: #C54200;
-
-        &:hover, :focus {
-            background-color: #9B3400;
-        }
-    }
+    margin-bottom: 100px;
 }
 
-.schoolCompare__list--firstRow {
-    border-top: none;
-}
-
-
-
-.table {
-    width: 100% !important;
+@media (max-width: 990px) {
+    .schoolCompare {
+        margin-bottom: 200px;
+    }
 }

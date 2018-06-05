@@ -1,0 +1,31 @@
+table {
+    margin-top: 20px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+th {
+    background-color: #1240AB;
+    color: white;
+    border: none;
+    border-top: none;
+    &:hover,
+    :focus {
+        background-color: darken(#1240AB, 5%);
+    }
+}
+
+td {
+    background-color: #0D3184;
+    &:hover,
+    :focus {
+        background-color: darken(#0D3184, 5%);
+    }
+}
+
+.schoolCompare__list--firstRow {
+    border-top: none;
+}
+
+.table {
+    width: 100% !important;
+}

@@ -6,16 +6,17 @@
     width: 80%;
     margin-top: 20px;
     padding: 10px;
-    background-color: #063565;
-    border-color: #063565;
+    background-color: #082568;
+    border-color: #082568;
     border-radius: 5px 5px 5px 5px;
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.486);
+    color: rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease-in-out;
+    outline: none;
     &:hover {
-        box-shadow: 0 0 70px 10px #515151;
+        box-shadow: 0 0 45px 5px #1240AB;
         transform: scale(1.01);
     }
 }
@@ -27,9 +28,9 @@
     .schoolSearch__compare--button {
         margin: 0px auto 15px auto;
         display: block;
-        background-color: #FFC500;
+        background-color: #FFAA00;
         border: none;
-        border-color: #FFC500;
+        border-color: #FFAA00;
         padding: 10px 30px;
         border-radius: 10px 10px 10px 10px;
         color: black;
@@ -61,6 +62,7 @@
     display: inline-block;
     margin: 0 auto;
     min-height: 220px;
+    margin-bottom: 100px;
 }
 
 .schoolSearch__preview {
@@ -68,38 +70,39 @@
     flex-direction: row;
     flex-wrap: wrap;
     min-height: 220px;
+    margin-bottom: 100px;
     .schoolSearch__preview--school {
         padding: 20px 40px;
-        background-color: #FFD239;
+        background-color: #FFAA00;
+        text-align: center;
         width: 275px;
         color: black;
         margin: 0 auto;
         border-radius: 5px 5px 5px 5px;
         margin-bottom: 10px;
+        font-weight: 700;
         max-height: 100px;
         p {
             height: 24px;
-        }
-        button {
-            display: block;
-            left: 106%;
-            bottom: 92%;
-            border: none;
-            position: relative;
-            background: none;
-            cursor: pointer;
         }
     }
 }
 
 .schoolSearch__list {
     font-size: 25px;
+
+    .schoolSearch__list--loading {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px 0;
+    }
     table {
         border-collapse: separate;
         border-spacing: 0 5px;
         width: 80%;
         margin: 0 auto;
-        background-color: #FF5600;
+        background-color: #1240AB;
         padding: 0 10px;
         margin-bottom: 20px;
         border-radius: 5px 5px 5px 5px;
@@ -117,14 +120,14 @@
         -webkit-border-bottom-right-radius: 5px;
     }
     .schoolSearch__list--tableRow {
-        background-color: #C54200;
+        background-color: #0D3184;
         -webkit-transition-property: background-color;
         -webkit-transition: 0.25s;
         transition-property: background-color;
         transition: 0.25s;
         &:hover {
             color: rgba(255, 255, 255, 1);
-            background-color: #9B3400;
+            background-color: #082568;
         }
     }
     .table td,
@@ -185,6 +188,10 @@
 }
 
 @media (max-width: 768px) {
+    .schoolSearch__preview--info,
+    .schoolSearch__preview {
+        margin-bottom: 220px;
+    }
     .schoolSearch__preview--school {
         width: 130px !important;
         height: auto;

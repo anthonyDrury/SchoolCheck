@@ -1,38 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 schoolCompare">
-      <div class='table-responsive'>
-        <table class='table' *ngIf='schoolCompareDetails && schoolCompareDetails.length'>
-          <thead>
-            <tr>
-              <th>
-                <p>Details</p>
-              </th>
-              <th *ngFor='let schoolArray of schoolCompareDetails'>
-                <p>{{ schoolArray.School_name }}</p>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>
-                <p>Number of Students:</p>
-              </th>
-              <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
-                <p>{{school.Student_number}}</p>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <p>LBOTE %:</p>
-              </th>
-              <td *ngFor='let school of schoolCompareDetails'>
-                <p>{{school.LBOTE_pct}}</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <app-table-compare [schoolCompareDetails]="schoolCompareDetails"></app-table-compare>
     </div>
   </div>
 </div>

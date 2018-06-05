@@ -7,9 +7,10 @@ import { CompareComponent } from '../compare/compare.component';
 import { SchoolDetailComponent } from '../school-detail/school-detail.component';
 
 
-
 import { RouterModule } from '@angular/router';
 import { SchoolService } from '../shared/school.service';
+import { TableCompareComponent } from '../compare/table-compare.component';
+import { TableDetailComponent } from '../school-detail/table-detail.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,9 @@ import { SchoolService } from '../shared/school.service';
   declarations: [
     HomeComponent,
     SchoolDetailComponent,
-    CompareComponent
+    CompareComponent,
+    TableDetailComponent,
+    TableCompareComponent
   ],
   providers: [
     SchoolService
