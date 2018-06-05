@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { SchoolDetailComponent } from './home/school-detail.component';
-import { SchoolGuardService } from './home/school-guard.service';
-import { SchoolCompareComponent } from './home/school-compare.component';
+import { CompareComponent } from './compare/compare.component';
+import { SchoolDetailComponent } from './school-detail/school-detail.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   {
-    path: 'home/:id',
-    canActivate: [SchoolGuardService],
+    path: 'school/:id',
     component: SchoolDetailComponent
   },
   {
     path: 'compare/:id',
-    component: SchoolCompareComponent
+    component: CompareComponent
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

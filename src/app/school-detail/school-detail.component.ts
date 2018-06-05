@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ISchools } from './school';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HomeService } from './home.service';
+import { ISchools } from '../shared/school';
+import { SchoolService } from '../shared/school.service';
 
 @Component({
   selector: 'app-school-detail',
@@ -9,14 +9,12 @@ import { HomeService } from './home.service';
   styleUrls: ['./school-detail.component.scss']
 })
 export class SchoolDetailComponent implements OnInit {
-
-  pageTitle: string;
   errorMessage: string;
   schoolDetails: ISchools;
 
   constructor(private _route: ActivatedRoute,
     private _router: Router,
-    private _HomeService: HomeService) {
+    private _SchoolService: SchoolService) {
   }
 
   ngOnInit() {
@@ -28,17 +26,16 @@ export class SchoolDetailComponent implements OnInit {
   }
 
   getSchoolDetails(id: string): void {
-    this._HomeService.getSchoolDetails(id)
+    this._SchoolService.getSchoolDetails(id)
     .subscribe(
       school => {
         this.schoolDetails = school;
-        this.pageTitle = this.schoolDetails.School_name;
       },
       error => this.errorMessage = <any>error);
   }
 
   onBack(): void {
-    this._router.navigate(['/home']);
+    this._router.navigate(['/']);
   }
 
 }

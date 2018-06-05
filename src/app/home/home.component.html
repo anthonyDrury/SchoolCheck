@@ -2,23 +2,13 @@
   <div class="row">
     <div class="col-12 schoolSearch__header">
       <input class="schoolSearch__header--searchbar" type='text' [(ngModel)]='listFilter' />
-      <p class="schoolSearch__header--infoText">Click on the school for further detals</p>
+      <p class="schoolSearch__header--infoText">Click on the school name for further detals</p>
     </div>
   </div>
   <div class="row">
     <div class="col-12 schoolSearch__compare">
       <button [ngClass]="[displayCompareBtn, 'schoolSearch__compare--button']" (click)="compare()">COMPARE</button>
-    </div>
-  </div>
-  <div class="row" *ngIf='compareSchoolsNames && compareSchoolsNames.length'>
-    <div class="col-12 schoolSearch__preview">
-      <div *ngFor='let school of compareSchoolsNames' class="schoolSearch__preview--school">
-        {{ school }}
-        <button (click)="removeItem(school)"
-        >
-        &#10060;
-      </button>
-      </div>
+      <p>Selected Schools will display below the table</p>
     </div>
   </div>
   <div class="row">
@@ -37,7 +27,7 @@
               <td>
                 <input type="checkbox" [value]="school.AgeID" [name]="'cb'+school.AgeID" [id]="'cb'+school.AgeID" class="schoolSearch__list--checkbox"
                   (change)="onChange(school.AgeID, school.School_name, $event.target.checked)" [disabled]="checkedLimit && !checkID(school.AgeID)"
-                  />
+                />
                 <label for="cb{{school.AgeID}}"></label>
               </td>
               <!--  -->
@@ -47,3 +37,16 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12 schoolSearch__preview" *ngIf='compareSchoolsNames && compareSchoolsNames.length else defaultContent'>
+      <div *ngFor='let school of compareSchoolsNames' class="schoolSearch__preview--school">
+        <p>{{ school }}</p>
+        <button (click)="removeItem(school)">&#10060;</button>
+      </div>
+    </div>
+    <ng-template #defaultContent>
+      <p class="schoolSearch__preview--info">Selected Schools will appear here.
+        <br /> Try selecting some schools.</p>
+    </ng-template>
+  </div>
+</div>

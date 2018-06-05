@@ -4,14 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, tap, catchError } from 'rxjs/operators';
 
-import { ISchools } from './school';
 import { FUNCTION_TYPE } from '@angular/compiler/src/output/output_ast';
+import { ISchools } from '../shared/school';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class HomeService {
+export class SchoolService {
   private _Url = 'assets/datasets/Merged-Data.JSON';
   constructor(private _http: HttpClient) { }
 

@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HomeService } from './home.service';
-import { ISchools } from './school';
+import { ISchools } from '../shared/school';
+import { SchoolService } from '../shared/school.service';
 
 @Component({
-  selector: 'app-school-compare',
-  templateUrl: './school-compare.component.html',
-  styleUrls: ['./school-compare.component.scss']
+  selector: 'app-compare',
+  templateUrl: './compare.component.html',
+  styleUrls: ['./compare.component.scss']
 })
-export class SchoolCompareComponent implements OnInit {
+export class CompareComponent implements OnInit {
   errorMessage: any;
   schoolCompareDetails: ISchools[];
 
   constructor(private _route: ActivatedRoute,
     private _router: Router,
-    private _HomeService: HomeService) {
+    private _SchoolService: SchoolService) {
   }
 
   ngOnInit() {
@@ -27,11 +27,16 @@ export class SchoolCompareComponent implements OnInit {
 
 
   getSchoolCompareDetails(id1: string, id2: string, id3?: string, id4?: string): void {
-    this._HomeService.getSchoolCompareDetails(id1, id2, id3, id4)
+    this._SchoolService.getSchoolCompareDetails(id1, id2, id3, id4)
     .subscribe(
       school => {
         this.schoolCompareDetails = school;
       },
       error => this.errorMessage = <any>error);
+  }
+
+
+  onBack(): void {
+    this._router.navigate(['/']);
   }
 }

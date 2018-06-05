@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ISchools } from './school';
-import { HomeService } from './home.service';
 import { Router } from '@angular/router';
+import { ISchools } from '../shared/school';
+import { SchoolService } from '../shared/school.service';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   constructor(
-    private _schoolsService: HomeService,
+    private _schoolsService: SchoolService,
     private _router: Router) {
 
   }
@@ -94,7 +94,7 @@ export class HomeComponent implements OnInit {
   }
 
   redirect(code: string) {
-    this._router.navigate(['/home/', code]);
+    this._router.navigate(['/school/', code]);
   }
 
   performFilter(filterBy: string): ISchools[] {
