@@ -1,0 +1,44 @@
+.school__header {
+    background-color: #FF5600;
+    width: 100%;
+    padding: 20px;
+}
+
+.school__header--text {
+    font-weight: 700;
+}
+
+.school__body--details {
+    padding-top: 30px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    p {
+        padding: 10px;
+        span {
+            font-weight: 700;
+        }
+    }
+
+
+    .school__body--details--item {
+        width: 200px;
+        background-color: #FFC500;
+        margin: 5px;
+    }
+}
+
+.school__body--map {
+    width: 450px;
+    padding-top: 30px;
+}
+
+.school__contact--headerText {
+    padding-top: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.school__contact--details p span {
+    font-weight: 700;
+}

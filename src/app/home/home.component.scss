@@ -1,0 +1,176 @@
+.schoolSearch__header {
+    text-align: center;
+}
+
+.schoolSearch__header--searchbar {
+    width: 80%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #063565;
+    border-color: #063565;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.486);
+
+    transition: all 0.3s ease-in-out;
+
+
+    &:hover {
+        box-shadow: 0 0 70px 10px #515151;
+        transform: scale(1.05);
+    }
+}
+
+.schoolSearch__compare--button {
+    margin: 0px auto 15px auto;
+    display: block;
+    background-color: #FFC500;
+    border: none;
+    border-color: #FFC500;
+    padding: 10px 30px;
+    border-radius: 10px 10px 10px 10px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    :focus {
+        transform: translateY(-0.25em);
+        transform: scale(1.05);        
+        box-shadow: 0px 5px 8px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.schoolSearch__compare--button--off {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.schoolSearch__compare--button--fadeIn {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+    -webkit-transition: opacity 0.2s linear;
+}
+
+.schoolSearch__preview {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .schoolSearch__preview--school {
+        padding: 20px 40px;
+        background-color: #FFD239;
+        width: 275px;
+        color: black;
+        margin: 0 auto;
+        border-radius: 5px 5px 5px 5px;
+        margin-bottom: 10px;
+        button {
+            display: block;
+            left: 106%;
+            bottom: 92%;
+            border: none;
+            position: relative;
+            background: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.schoolSearch__list {
+    font-size: 25px;
+    table {
+        border-collapse: separate;
+        border-spacing: 0 5px;
+        width: 80%;
+        margin: 0 auto;
+        background-color: #FF5600;
+        padding: 0 10px;
+        margin-bottom: 20px;
+        border-radius: 5px 5px 5px 5px;
+    }
+    tr td:first-child {
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+    }
+    tr td:last-child {
+        -moz-border-radius-topright: 5px;
+        -moz-border-radius-bottomright: 5px;
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+    }
+    .schoolSearch__list--tableRow {
+        background-color: #C54200;
+        -webkit-transition-property: background-color;
+        -webkit-transition: 0.25s;
+        transition-property: background-color;
+        transition: 0.25s;
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+            background-color: #9B3400;
+        }
+    }
+    .table td,
+    .table th {
+        border: none;
+        border-top: none;
+    }
+    .schoolSearch__list--tableRow--tdLink {
+        cursor: pointer;
+    }
+    .schoolSearch__list--checkbox {
+        width: 28px;
+        height: 28px;
+        position: relative;
+        .schoolSearch__list--checkbox input[type=checkbox] {
+            visibility: hidden;
+            &:checked+label:after {
+                opacity: 1;
+            }
+        }
+        .schoolSearch__list--checkbox label {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            &:after {
+                content: '';
+                width: 9px;
+                height: 5px;
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                border: 3px solid #fcfff4;
+                border-top: none;
+                border-right: none;
+                background: transparent;
+                opacity: 0;
+                transform: rotate(-45deg);
+            }
+            &label:hover::after {
+                opacity: 0.3;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .schoolSearch__preview--school {
+        width: 175px !important;
+    }
+    .schoolSearch__list {
+        font-size: 1.1em;
+    }
+    .table {
+        width: 100% !important;
+        td {
+            height: 75px;
+        }
+    }
+}

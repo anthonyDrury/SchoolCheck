@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 schoolSearch__header">
+      <input class="schoolSearch__header--searchbar" type='text' [(ngModel)]='listFilter' />
+      <p class="schoolSearch__header--infoText">Click on the school for further detals</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 schoolSearch__compare">
+      <button [ngClass]="[displayCompareBtn, 'schoolSearch__compare--button']" (click)="compare()">COMPARE</button>
+    </div>
+  </div>
+  <div class="row" *ngIf='compareSchoolsNames && compareSchoolsNames.length'>
+    <div class="col-12 schoolSearch__preview">
+      <div *ngFor='let school of compareSchoolsNames' class="schoolSearch__preview--school">
+        {{ school }}
+        <button (click)="removeItem(school)"
+        >
+        &#10060;
+      </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 schoolSearch__list">
+      <div class='table-responsive'>
+        <table class='table' *ngIf='filteredSchools && filteredSchools.length'>
+          <thead>
+            <tr>
+              <th>School Name</th>
+              <th>Compare</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let school of filteredSchools' class="schoolSearch__list--tableRow">
+              <td (click)="redirect(school.AgeID)" class="schoolSearch__list--tableRow--tdLink">{{ school.School_name }}</td>
+              <td>
+                <input type="checkbox" [value]="school.AgeID" [name]="'cb'+school.AgeID" [id]="'cb'+school.AgeID" class="schoolSearch__list--checkbox"
+                  (change)="onChange(school.AgeID, school.School_name, $event.target.checked)" [disabled]="checkedLimit && !checkID(school.AgeID)"
+                  />
+                <label for="cb{{school.AgeID}}"></label>
+              </td>
+              <!--  -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
