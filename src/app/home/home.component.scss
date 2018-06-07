@@ -1,5 +1,6 @@
 .schoolSearch__header {
     text-align: center;
+    color: white;
 }
 
 .schoolSearch__header--searchbar {
@@ -90,34 +91,22 @@
 
 .schoolSearch__list {
     font-size: 25px;
-
     .schoolSearch__list--loading {
         display: block;
         margin: 0 auto;
         text-align: center;
         padding: 20px 0;
+        color: white;
+        font-weight: 700;
+        font-size: 22px;
     }
     table {
         border-collapse: separate;
-        border-spacing: 0 5px;
         width: 80%;
         margin: 0 auto;
-        background-color: #1240AB;
-        padding: 0 10px;
+        background-color: black;
         margin-bottom: 20px;
-        border-radius: 5px 5px 5px 5px;
-    }
-    tr td:first-child {
-        -moz-border-radius-topleft: 5px;
-        -moz-border-radius-bottomleft: 5px;
-        -webkit-border-top-left-radius: 5px;
-        -webkit-border-bottom-left-radius: 5px;
-    }
-    tr td:last-child {
-        -moz-border-radius-topright: 5px;
-        -moz-border-radius-bottomright: 5px;
-        -webkit-border-top-right-radius: 5px;
-        -webkit-border-bottom-right-radius: 5px;
+        border-radius: 5px 5px 0px 0px;
     }
     .schoolSearch__list--tableRow {
         background-color: #0D3184;
@@ -127,13 +116,27 @@
         transition: 0.25s;
         &:hover {
             color: rgba(255, 255, 255, 1);
-            background-color: #082568;
+            background-color: darken(#0D3184, 5%);
+            text-decoration: underline;
         }
     }
     .table td,
     .table th {
         border: none;
         border-top: none;
+    }
+    tr:nth-child(odd) {
+        background-color: lighten(#0D3184, 10%);
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+            background-color: lighten(#0D3184, 15%);
+        }
+    }
+    th {
+        background-color: darken(#0E3794, 5%);
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+        }
     }
     .schoolSearch__list--tableRow--tdLink {
         cursor: pointer;
@@ -187,6 +190,12 @@
     }
 }
 
+@media (max-width: 992px) {
+    .schoolSearch__list {
+        font-size: 22px;
+    }
+}
+
 @media (max-width: 768px) {
     .schoolSearch__preview--info,
     .schoolSearch__preview {
@@ -198,12 +207,18 @@
         font-size: 0.8em;
     }
     .schoolSearch__list {
-        font-size: 1.1em;
+        font-size: 19px;
     }
     .table {
         width: 100% !important;
         td {
             height: 75px;
         }
+    }
+}
+
+@media (max-width: 576px) {
+    .schoolSearch__list {
+        font-size: 16px;
     }
 }

@@ -16,6 +16,7 @@ export interface ISchools {
 
         // Gov Only
         Support_classes?: string;
+        Student_number?: string;
         Principal_network?: string;
         Date_extracted?: string;
         Assets_unit?: string;
@@ -40,6 +41,7 @@ export interface ISchools {
         Electorate?: string;
         Operational_directorate?: string;
         School_code?: string;
+        LBOTE_pct?: string;
 
         // Private Only
         Head_campus_ageID?: number;
