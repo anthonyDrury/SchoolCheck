@@ -1,0 +1,98 @@
+[
+  {
+    "year": 2006,
+    "primary": 94,
+    "junior_secondary": 89.9,
+    "senior_secondary": 89.7,
+    "secondary": 89.8,
+    "NSW_total": 92.3
+  },
+  {
+    "year": 2007,
+    "primary": 94,
+    "junior_secondary": 90,
+    "senior_secondary": 89.6,
+    "secondary": 89.9,
+    "NSW_total": 92.3
+  },
+  {
+    "year": 2008,
+    "primary": 94.1,
+    "junior_secondary": 90,
+    "senior_secondary": 89.8,
+    "secondary": 89.9,
+    "NSW_total": 92.3
+  },
+  {
+    "year": 2009,
+    "primary": 93.9,
+    "junior_secondary": 89.8,
+    "senior_secondary": 89.4,
+    "secondary": 89.7,
+    "NSW_total": 92.1
+  },
+  {
+    "year": 2010,
+    "primary": 94.3,
+    "junior_secondary": 90,
+    "senior_secondary": 89.4,
+    "secondary": 89.8,
+    "NSW_total": 92.4
+  },
+  {
+    "year": 2011,
+    "primary": 94.2,
+    "junior_secondary": 89.4,
+    "senior_secondary": 88.3,
+    "secondary": 89.1,
+    "NSW_total": 92.1
+  },
+  {
+    "year": 2012,
+    "primary": 94.1,
+    "junior_secondary": 89.3,
+    "senior_secondary": 88.3,
+    "secondary": 89,
+    "NSW_total": 92
+  },
+  {
+    "year": 2013,
+    "primary": 94.6,
+    "junior_secondary": 90.1,
+    "senior_secondary": 89.1,
+    "secondary": 89.8,
+    "NSW_total": 92.6
+  },
+  {
+    "year": 2014,
+    "primary": 94.8,
+    "junior_secondary": 90.3,
+    "senior_secondary": 89.5,
+    "secondary": 90,
+    "NSW_total": 92.9
+  },
+  {
+    "year": 2015,
+    "primary": 93.9,
+    "junior_secondary": 89.8,
+    "senior_secondary": 89,
+    "secondary": 89.5,
+    "NSW_total": 92.2
+  },
+  {
+    "year": 2016,
+    "primary": 93.9,
+    "junior_secondary": 89.7,
+    "senior_secondary": 89,
+    "secondary": 89.5,
+    "NSW_total": 92.2
+  },
+  {
+    "year": 2017,
+    "primary": 93.9,
+    "junior_secondary": 89.6,
+    "senior_secondary": 89,
+    "secondary": 89.5,
+    "NSW_total": 92.1
+  }
+]
