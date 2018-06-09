@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { ISchools } from '../shared/school';
 import { SchoolService } from '../shared/school.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-school-detail',

@@ -29,8 +29,8 @@
           </thead>
           <tbody>
             <tr *ngFor='let school of filteredSchools' class="schoolSearch__list--tableRow">
-              <td (click)="redirect(school.AgeID)" class="schoolSearch__list--tableRow--tdLink" title="Click for more details">{{ school.School_name }}</td>
-              <td (click)="redirect(school.AgeID)" class="schoolSearch__list--tableRow--tdLink" title="Click for more details">{{ school.Postcode }}</td>
+              <td (click)="redirect(school.AgeID)" class="schoolSearch__list--tableRow--tdLink" title="Click for more details">{{ school.School_name | NoDataPipe }}</td>
+              <td (click)="redirect(school.AgeID)" class="schoolSearch__list--tableRow--tdLink" title="Click for more details">{{ school.Postcode | NoDataPipe }}</td>
               <td>
                 <input type="checkbox" [value]="school.AgeID" [name]="'cb'+school.AgeID" [id]="'cb'+school.AgeID" class="schoolSearch__list--checkbox"
                   (change)="onChange(school.AgeID, school.School_name, $event.target.checked)" [disabled]="checkedLimit && !checkID(school.AgeID)"
@@ -53,7 +53,7 @@
   <div class="row">
     <div class="col-12 schoolSearch__preview" *ngIf='compareSchoolsNames && compareSchoolsNames.length else defaultContent'>
       <div *ngFor='let school of compareSchoolsNames' class="schoolSearch__preview--school"  title="Selected School">
-        <p>{{ school }}</p>
+        <p>{{ school | NoDataPipe }}</p>
       </div>
     </div>
     <ng-template #defaultContent>

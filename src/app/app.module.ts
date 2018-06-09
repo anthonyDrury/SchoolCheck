@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
+import { SchoolDetailModule } from './school-detail/school-detail.module';
+import { CompareModule } from './compare/compare.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ErrorComponent } from './error/error.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    HomeModule
+    HomeModule,
+    SchoolDetailModule,
+    CompareModule
   ],
   providers: [],
   bootstrap: [AppComponent]

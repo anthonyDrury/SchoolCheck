@@ -17,7 +17,7 @@
             <p>Suburb:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.Town_suburb }}</p>
+            <p>{{ schoolDetails?.Town_suburb | NoDataPipe }}</p>
           </td>
         </tr>
         <tr>
@@ -25,7 +25,7 @@
             <p>Gender:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.School_gender }}</p>
+            <p>{{ schoolDetails?.School_gender | NoDataPipe | CoEdPipe}}</p>
           </td>
         </tr>
         <tr>
@@ -33,7 +33,7 @@
             <p>Level of Schooling:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.Level_of_schooling }}</p>
+            <p>{{ schoolDetails?.Level_of_schooling | NoDataPipe }}</p>
           </td>
         </tr>
         <tr>
@@ -41,7 +41,7 @@
             <p>Electorate:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.Fed_electorate }}</p>
+            <p>{{ schoolDetails?.Fed_electorate | NoDataPipe }}</p>
           </td>
         </tr>
   
@@ -51,7 +51,7 @@
             <p>Number of Students:</p>
           </td>
           <td>
-            <p>{{schoolDetails?.Student_number}}</p>
+            <p>{{schoolDetails?.Student_number | NoDataPipe }}</p>
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.School_subtype">
@@ -59,7 +59,7 @@
             <p>SchoolType:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.School_subtype }}</p>
+            <p>{{ schoolDetails?.School_subtype | NoDataPipe }}</p>
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.LBOTE_pct">
@@ -67,7 +67,7 @@
             <p>Non-English %:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.LBOTE_pct }}</p>
+            <p>{{ schoolDetails?.LBOTE_pct | NoDataPipe }}</p>
           </td>
         </tr>
   
@@ -76,7 +76,7 @@
             <p>School Specialty:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.School_specialty_type }}</p>
+            <p>{{ schoolDetails?.School_specialty_type | NoDataPipe }}</p>
           </td>
         </tr>
   
@@ -85,7 +85,7 @@
             <p>Indigenous Pct:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.Indigenous_pct }}</p>
+            <p>{{ schoolDetails?.Indigenous_pct | NoDataPipe }}</p>
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.Intensive_english_centre">
@@ -93,7 +93,7 @@
             <p>English Center:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.Intensive_english_centre }}</p>
+            <p>{{ schoolDetails?.Intensive_english_centre | NoDataPipe }}</p>
           </td>
         </tr>
   
@@ -104,7 +104,7 @@
             <p>Sector:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.Sector }}</p>
+            <p>{{ schoolDetails?.Sector | NoDataPipe }}</p>
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.School_affiliation">
@@ -112,7 +112,7 @@
             <p>Affliction:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.School_affiliation }}</p>
+            <p>{{ schoolDetails?.School_affiliation | NoDataPipe }}</p>
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.Campus_level">
@@ -120,23 +120,15 @@
             <p>Campus Level:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.Campus_level }}</p>
+            <p>{{ schoolDetails?.Campus_level | NoDataPipe }}</p>
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.Dicosese">
           <td>
-            <p>Dicosese:</p>
+            <p>Diocese:</p>
           </td>
           <td>
-            <p>{{ schoolDetails?.Dicosese }}</p>
-          </td>
-        </tr>
-        <tr *ngIf="schoolDetails?.Dicosese">
-          <td>
-            <p>Dicosese:</p>
-          </td>
-          <td>
-            <p>{{ schoolDetails?.Dicosese }}</p>
+            <p>{{ schoolDetails?.Dicosese | NoDataPipe }}</p>
           </td>
         </tr>
       </tbody>
