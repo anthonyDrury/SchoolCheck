@@ -1,25 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
 
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
 /*######################
 Shared CSS
 ######################*/
+
 .text-align--center {
     text-align: center;
 }
 
-
-html,
-body {
+html, body {
     height: 100%;
 }
 
-.display-none{
+.display-none {
     display: none !important;
 }
-
-
-
 
 app-root {
     display: block;
@@ -29,8 +25,7 @@ app-root {
 }
 
 body {
-    background-color: #009999;
-    color: rgba(255, 255, 255, 0.8);
-
+    background-color: #60676E;
+    color: rgba(255, 255, 255, 1);
     /*http://www.paletton.com/#uid=33A0u0kw0w0jyC+oRxVy4oIDfjr*/
 }

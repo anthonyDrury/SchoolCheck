@@ -1,23 +1,35 @@
+
+
+.schoolSearch__menu {
+    text-align: center;
+    background-color: #1240AB;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: solid black 10px;
+}
+
+
 .schoolSearch__header {
     text-align: center;
     color: white;
+    margin-top: 5px;
+    font-weight: 700;
 }
 
 .schoolSearch__header--searchbar {
     width: 80%;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
-    background-color: #082568;
-    border-color: #082568;
+    background-color: #1240AB;
+    border-color: #1240AB;
     border-radius: 5px 5px 5px 5px;
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease-in-out;
+    color: rgba(255, 255, 255, 1);
+    transition: all 0.2s ease-in-out;
     outline: none;
     &:hover {
-        box-shadow: 0 0 45px 5px #1240AB;
         transform: scale(1.01);
     }
 }
@@ -34,10 +46,14 @@
         border-color: #FFAA00;
         padding: 10px 30px;
         border-radius: 10px 10px 10px 10px;
+        text-shadow: 0 -1px rgba(255,255,255,0.4);
+        border: 1px solid rgba(0,0,0,0.15);
+        box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 3px -1px rgba(45,60,72,0.5);
         color: black;
         font-weight: 700;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
         &:hover,
         :focus {
             transform: translateY(-0.25em);
@@ -52,8 +68,8 @@
     .schoolSearch__compare--button--fadeIn {
         visibility: visible;
         opacity: 1;
-        transition: opacity 0.2s linear;
-        -webkit-transition: opacity 0.2s linear;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
     }
 }
 
@@ -68,21 +84,37 @@
 
 .schoolSearch__preview {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     min-height: 220px;
     margin-bottom: 100px;
     .schoolSearch__preview--school {
-        padding: 20px 40px;
-        background-color: #FFAA00;
+        padding: 20px 5px;
+        background-color: #0d3184;
         text-align: center;
-        width: 275px;
-        color: black;
-        margin: 0 auto;
-        border-radius: 5px 5px 5px 5px;
-        margin-bottom: 10px;
-        font-weight: 700;
+        width: 200px;
+        color: white;
+        font-size: 1.2em;
         max-height: 100px;
+        border: solid 1px;
+        border-color: black;
+        border-right: solid 1px;
+        border-right-color: black;
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+            background-color: darken(#0D3184, 5%);
+        }
+        &:last-child {
+            border-right: solid 1px;
+            border-right-color: black;
+        }
+        &:nth-child(odd) {
+            background-color: lighten(#0D3184, 10%);
+            &:hover {
+                color: rgba(255, 255, 255, 1);
+                background-color: lighten(#0D3184, 15%);
+            }
+        }
         p {
             height: 24px;
         }
@@ -214,6 +246,15 @@
         td {
             height: 75px;
         }
+    }
+    .schoolSearch__header--searchbar {
+        font-size: 18px;
+    }
+    .schoolSearch__header h1{
+        font-size: 1.6em;
+    }
+    .schoolSearch__info-text {
+
     }
 }
 

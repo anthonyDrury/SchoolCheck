@@ -13,7 +13,7 @@
       <tbody>
         <!-- Shared -->
         <tr>
-          <td>
+          <td title="School suburb/town">
             <p>Suburb:</p>
           </td>
           <td>
@@ -21,7 +21,7 @@
           </td>
         </tr>
         <tr>
-          <td>
+          <td title="School population gender status">
             <p>Gender:</p>
           </td>
           <td>
@@ -29,7 +29,7 @@
           </td>
         </tr>
         <tr>
-          <td>
+          <td title="Options include: primary school, secondary school">
             <p>Level of Schooling:</p>
           </td>
           <td>
@@ -37,8 +37,8 @@
           </td>
         </tr>
         <tr>
-          <td>
-            <p>Electorate:</p>
+          <td title="Federal electorate divisions">
+            <p>Fed Electorate:</p>
           </td>
           <td>
             <p>{{ schoolDetails?.Fed_electorate | NoDataPipe }}</p>
@@ -47,7 +47,7 @@
   
         <!-- Gov only -->
         <tr *ngIf="schoolDetails?.Student_number">
-          <td>
+          <td title="Full-time equivalent (FTE) student enrolments">
             <p>Number of Students:</p>
           </td>
           <td>
@@ -55,15 +55,15 @@
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.School_subtype">
-          <td>
-            <p>SchoolType:</p>
+          <td title="Further breakdown of a school level/type">
+            <p>SubType:</p>
           </td>
           <td>
             <p>{{ schoolDetails?.School_subtype | NoDataPipe }}</p>
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.LBOTE_pct">
-          <td>
+          <td title="language backgrounds other than English">
             <p>Non-English %:</p>
           </td>
           <td>
@@ -72,7 +72,7 @@
         </tr>
   
         <tr *ngIf="schoolDetails?.School_specialty_type">
-          <td>
+          <td title="School speciality flag">
             <p>School Specialty:</p>
           </td>
           <td>
@@ -81,7 +81,7 @@
         </tr>
   
         <tr *ngIf="schoolDetails?.Indigenous_pct">
-          <td>
+          <td title="Full-Time Equivalent Aboriginal or Torres Strait Islanders enrolled">
             <p>Indigenous Pct:</p>
           </td>
           <td>
@@ -89,7 +89,7 @@
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.Intensive_english_centre">
-          <td>
+          <td title="intensive English centre flag">
             <p>English Center:</p>
           </td>
           <td>
@@ -100,7 +100,7 @@
   
         <!-- Priv only -->
         <tr *ngIf="schoolDetails?.Sector">
-          <td>
+          <td title="Subcategory options include: Catholic or Independent">
             <p>Sector:</p>
           </td>
           <td>
@@ -109,7 +109,7 @@
         </tr>
         <tr *ngIf="schoolDetails?.School_affiliation">
           <td>
-            <p>Affliction:</p>
+            <p title="Self-reported religious or philosophical beliefs">Affiliation:</p>
           </td>
           <td>
             <p>{{ schoolDetails?.School_affiliation | NoDataPipe }}</p>
@@ -117,14 +117,14 @@
         </tr>
         <tr *ngIf="schoolDetails?.Campus_level">
           <td>
-            <p>Campus Level:</p>
+            <p title="School type for campus level only">Campus Level:</p>
           </td>
           <td>
             <p>{{ schoolDetails?.Campus_level | NoDataPipe }}</p>
           </td>
         </tr>
         <tr *ngIf="schoolDetails?.Dicosese">
-          <td>
+          <td title="Districts under the pastoral care of a bishop in the Catholic church">
             <p>Diocese:</p>
           </td>
           <td>

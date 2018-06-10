@@ -1,7 +1,12 @@
 .school__header {
     background-color: #1240AB;
     width: 100%;
-    padding: 20px;
+    padding: 20px;    
+    background-color: #1240AB;
+    width: 100%;
+    padding: 5px 20px;
+    text-align: center;
+    border-bottom: solid black 10px;
 }
 
 .school__header--text {
@@ -25,6 +30,7 @@
     margin-top: 30px;
     padding: 20px 0;
     color: black;
+    border: solid;
     margin-bottom: 30px;
     .school__contact--headerText {
         text-align: center;

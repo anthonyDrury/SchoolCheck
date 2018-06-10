@@ -8,6 +8,8 @@ import { SchoolService } from '../shared/school.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
+
 export class HomeComponent implements OnInit {
   errorMessage: any;
   _searchFilter: string;
@@ -19,7 +21,6 @@ export class HomeComponent implements OnInit {
   displayCompareBtn = 'schoolSearch__compare--button--off';
   checkedNumber = 0;
   checkedLimit = false;
-
 
   get listFilter(): string {
     return this._searchFilter;
