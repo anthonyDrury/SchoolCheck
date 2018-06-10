@@ -55,5 +55,9 @@ export interface ISchools {
         Lga?: string;
         Electorate_code?: string;
         SA3?: string;
+
+
+        // In App Data
+        Checked: boolean;
 }
 

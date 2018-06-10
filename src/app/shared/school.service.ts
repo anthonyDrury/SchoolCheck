@@ -17,7 +17,13 @@ export class SchoolService {
 
   getSchools(): Observable<ISchools[]> {
     return this._http.get<ISchools[]>(this._Url).pipe(
-      catchError(this.handleError), );
+      map(function(e) {
+        return e.map( function(obj) {
+          obj.Checked = false;
+          return obj;
+        });
+      }),
+    catchError(this.handleError));
   }
 
   getSchoolDetails(id: string): Observable < ISchools > {

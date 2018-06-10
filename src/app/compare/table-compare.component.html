@@ -17,7 +17,7 @@
           <p>Gender:</p>
         </th>
         <td *ngFor='let school of schoolCompareDetails' class="schoolCompare__list--firstRow">
-          <p>{{school.School_gender | NoDataPipe}}</p>
+          <p>{{school.School_gender | NoDataPipe | CoEdPipe}}</p>
         </td>
       </tr>
       <tr>

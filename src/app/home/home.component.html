@@ -1,13 +1,14 @@
-
 <div class="schoolSearch__menu">
   <h1>Compare NSW Schools</h1>
 </div>
 <div class="container">
   <div class="row">
     <div class="col-12 schoolSearch__header">
-      <input class="schoolSearch__header--searchbar" type='text' [(ngModel)]='listFilter' title="School Search" placeholder="Enter School Name"/>
+      <input class="schoolSearch__header--searchbar" type='text' [(ngModel)]='listFilter' title="School Search" placeholder="Enter School Name"
+      />
       <p class="schoolSearch__header--infoText">
-        Click on the <strong>school name</strong> for further details
+        Click on the
+        <strong>school name</strong> for further details
       </p>
     </div>
   </div>
@@ -35,9 +36,9 @@
               <td (click)="redirect(school.AgeID)" class="schoolSearch__list--tableRow--tdLink" title="Click for more details">{{ school.School_name | NoDataPipe }}</td>
               <td (click)="redirect(school.AgeID)" class="schoolSearch__list--tableRow--tdLink" title="Click for more details">{{ school.Postcode | NoDataPipe }}</td>
               <td>
-                <input type="checkbox" [value]="school.AgeID" [name]="'cb'+school.AgeID" [id]="'cb'+school.AgeID" class="schoolSearch__list--checkbox"
-                  (change)="onChange(school.AgeID, school.School_name, $event.target.checked)" [disabled]="checkedLimit && !checkID(school.AgeID)"
-                />
+                <input type="checkbox" [value]="school.AgeID" [(checked)]="school.Checked" [name]="'cb'+school.AgeID" [id]="'cb'+school.AgeID"
+                  class="schoolSearch__list--checkbox" (change)="onChange(school.AgeID, school.School_name, !school.Checked); school.Checked = !school.Checked"
+                  [disabled]="!checkID(school.AgeID)" />
                 <label for="cb{{school.AgeID}}"></label>
               </td>
               <!--  -->
@@ -54,15 +55,17 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 schoolSearch__preview" *ngIf='compareSchoolsNames && compareSchoolsNames.length else defaultContent'>
-      <div *ngFor='let school of compareSchoolsNames' class="schoolSearch__preview--school"  title="Selected School">
-        <p>{{ school | NoDataPipe }}</p>
+    <p class="schoolSearch__preview--note" *ngIf='schoolsPreview && schoolsPreview.length'>Click on the Schools below to remove them</p>
+
+    <div class="col-12 schoolSearch__preview" *ngIf='schoolsPreview && schoolsPreview.length else defaultContent'>
+      <div *ngFor='let school of schoolsPreview' class="schoolSearch__preview--school" title="Selected School" (click)="removeSchool(school)">
+        <p>{{ school.School_name | NoDataPipe }}</p>
       </div>
     </div>
     <ng-template #defaultContent>
       <p class="schoolSearch__preview--info">
         <span *ngIf='filteredSchools && filteredSchools.length'>Selected Schools will appear here.
-        <br /> Try selecting some schools.</span>
+          <br /> Try selecting some schools.</span>
       </p>
     </ng-template>
   </div>

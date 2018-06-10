@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ISchools } from '../shared/school';
 import { SchoolService } from '../shared/school.service';
+import { ISchoolsPreview } from '../shared/schoolPreview';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +16,7 @@ export class HomeComponent implements OnInit {
   _searchFilter: string;
   filteredSchools: ISchools[];
   schools: ISchools[] = [];
-  compareSchools: string[] = [];
-  compareSchoolsNames: string[] = [];
+  schoolsPreview: ISchoolsPreview[] = [];
   checkedIds: string[] = [];
   displayCompareBtn = 'schoolSearch__compare--button--off';
   checkedNumber = 0;
@@ -37,10 +37,10 @@ export class HomeComponent implements OnInit {
   }
 
   compare(): void {
-    if (this.compareSchools.length > 0) {
+    if (this.schoolsPreview.length > 0) {
       let compareQuery = '';
-      for (let i = 0; i < this.compareSchools.length; i++) {
-        compareQuery += this.compareSchools[i] + '&';
+      for (let i = 0; i < this.schoolsPreview.length; i++) {
+        compareQuery += this.schoolsPreview[i].AgeID + '&';
       }
       compareQuery = compareQuery.slice(0, -1);
       this._router.navigate(['/compare/', compareQuery]);
@@ -48,25 +48,21 @@ export class HomeComponent implements OnInit {
   }
 
   onChange(code: string, name: string, check: boolean, id: string): void {
-    if (check && this.checkedNumber < 4) {
-      this.compareSchools.push(code);
-      this.compareSchoolsNames.push(name);
+    const tempPreview: ISchoolsPreview = { AgeID: code, School_name: name };
 
-      this.compareSchools.sort();
-      this.compareSchoolsNames.sort();
+    if (check && this.checkedNumber < 4) {
+      this.schoolsPreview.push(tempPreview);
+
+      this.schoolsPreview.sort();
 
       this.checkedNumber++;
       if (this.checkedNumber > 3) {
         this.checkedLimit = true;
       }
     } else if (this.checkedNumber > -1) {
-      let index = this.compareSchools.indexOf(code);
+      const index = this.schoolsPreview.findIndex(s => s.AgeID === code);
       if (index > -1) {
-        this.compareSchools.splice(index, 1);
-      }
-      index = this.compareSchoolsNames.indexOf(name);
-      if (index > -1) {
-        this.compareSchoolsNames.splice(index, 1);
+        this.schoolsPreview.splice(index, 1);
       }
       this.checkedNumber--;
       if (this.checkedNumber < 4) {
@@ -76,7 +72,7 @@ export class HomeComponent implements OnInit {
       }
     }
 
-    if (this.compareSchools.length > 0) {
+    if (this.schoolsPreview.length > 0) {
       this.displayCompareBtn = 'schoolSearch__compare--button--fadeIn';
     } else {
       this.displayCompareBtn = 'schoolSearch__compare--button--off';
@@ -84,7 +80,8 @@ export class HomeComponent implements OnInit {
   }
 
   checkID(id: string): boolean {
-    if (this.compareSchools.indexOf(id) > -1) {
+    const index = this.schoolsPreview.findIndex(s => s.AgeID === id);
+    if (index > -1) {
       return true;
     } else {
       if (this.checkedLimit) {
@@ -96,6 +93,29 @@ export class HomeComponent implements OnInit {
 
   redirect(code: string) {
     this._router.navigate(['/school/', code]);
+  }
+
+  removeSchool(school: ISchoolsPreview) {
+    if (this.checkedNumber > -1) {
+      let index = this.schoolsPreview.findIndex(s => s.AgeID === school.AgeID);
+
+      if (index > -1) {
+        this.schoolsPreview.splice(index, 1);
+      }
+
+      index = this.schools.findIndex(s => s.AgeID === school.AgeID);
+
+      if (index > -1) {
+        this.schools[index].Checked = false;
+      }
+
+      this.checkedNumber--;
+      if (this.checkedNumber < 4) {
+        this.checkedLimit = false;
+      } else {
+        alert('an indexing error has been encountered behind the scenes');
+      }
+    }
   }
 
   performFilter(filterBy: string): ISchools[] {
