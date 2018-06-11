@@ -1,6 +1,6 @@
 <div class="school__header">
-  <h1 class="school__header--text">{{ schoolDetails?.School_name }}</h1>
-  <h3 *ngIf="schoolDetails?.School_subtype">{{ schoolDetails?.School_subtype }}</h3>
+  <h1 class="school__header--text">{{ schoolDetails?.School_name | NoDataPipe }}</h1>
+  <h3 *ngIf="schoolDetails?.School_subtype">{{ schoolDetails?.School_subtype | NoDataPipe }}</h3>
 </div>
 
 <div class="school__body">
@@ -16,17 +16,17 @@
         <h4 class="school__contact--headerText">Contact Us</h4>
         <div class="school__contact--details">
           <p *ngIf="schoolDetails?.Phone">
-            <span>Phone: </span> {{ schoolDetails?.Phone }}
+            <span>Phone: </span> {{ schoolDetails?.Phone | NoDataPipe }}
           </p>
           <p *ngIf="schoolDetails?.Fax">
-            <span>Fax: </span> {{ schoolDetails?.Fax }}
+            <span>Fax: </span> {{ schoolDetails?.Fax | NoDataPipe }}
           </p>
           <p *ngIf="schoolDetails?.School_Email">
-            <span>Email: </span> {{ schoolDetails?.School_Email }}
+            <span>Email: </span> {{ schoolDetails?.School_Email | NoDataPipe }}
           </p>
           <p>
-            <span>Address: </span> {{ schoolDetails?.Street + ", " + schoolDetails?.Town_suburb + ", " + schoolDetails?.Postcode
-            + ", NSW, Australia"}}
+            <span>Address: </span> {{schoolDetails?.Street + ", " + schoolDetails?.Town_suburb + ", " + schoolDetails?.Postcode
+            + ", NSW, Australia"  | NoDataPipe}}
           </p>
 
         </div>
