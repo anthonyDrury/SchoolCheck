@@ -11,6 +11,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { SchoolDetailModule } from './school-detail/school-detail.module';
 import { CompareModule } from './compare/compare.module';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,11 @@ import { CompareModule } from './compare/compare.module';
     FormsModule,
     HomeModule,
     SchoolDetailModule,
-    CompareModule
+    CompareModule,
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
+  Angulartics2GoogleAnalytics],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
