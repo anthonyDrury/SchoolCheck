@@ -4,12 +4,13 @@ import { FormsModule} from '@angular/forms';
 import { SchoolService } from './school.service';
 import { CoEdPipe } from '../shared/co-ed.pipe';
 import { NoDataPipe } from './no-data.pipe';
+import { FooterComponent } from '../footer/footer.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule
   ],
   declarations: [
     CoEdPipe,
@@ -18,7 +19,7 @@ import { NoDataPipe } from './no-data.pipe';
   exports: [
     FormsModule,
     CoEdPipe,
-    NoDataPipe
+    NoDataPipe,
   ],
   providers: [
     SchoolService

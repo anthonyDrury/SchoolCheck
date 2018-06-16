@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AboutUsComponent } from './about-us.component';
 import { SharedModule } from '../shared/shared.module';
-
-import { HomeComponent } from './home.component';
 
 @NgModule({
   imports: [
@@ -10,7 +9,7 @@ import { HomeComponent } from './home.component';
     SharedModule
   ],
   declarations: [
-    HomeComponent
+    AboutUsComponent
   ]
 })
-export class HomeModule { }
+export class AboutUsModule { }

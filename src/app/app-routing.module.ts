@@ -5,9 +5,14 @@ import { CompareComponent } from './compare/compare.component';
 import { SchoolDetailComponent } from './school-detail/school-detail.component';
 import { ErrorComponent } from './error/error.component';
 import { SchoolDetailGuardService } from './school-detail/school-detail-guard.service';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  {
+    path: 'about',
+    component: AboutUsComponent
+  },
   {
     path: 'school/:id',
     canActivate: [ SchoolDetailGuardService ],

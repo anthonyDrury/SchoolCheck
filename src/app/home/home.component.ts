@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
   set listFilter(value: string) {
     this._searchFilter = value;
-    this.filteredSchools = this.listFilter ? this.performFilter(this.listFilter) : this.schools.slice(0, 10);
+    this.filteredSchools = this.listFilter ? this.performFilter(this.listFilter) : this.schools;
   }
 
   constructor(
@@ -119,17 +119,22 @@ export class HomeComponent implements OnInit {
   }
 
   performFilter(filterBy: string): ISchools[] {
-    filterBy = filterBy.toLocaleLowerCase();
-    return this.schools.filter((school: ISchools) =>
-      school.School_name.toLocaleLowerCase().indexOf(filterBy) !== -1)
-      .slice(0, 10);
+    this._schoolsService.getSchools(filterBy).subscribe(schools => {
+      this.filteredSchools = schools.sort();
+      this.filteredSchools.map(e => e.Checked = false);
+    },
+      error => this.errorMessage = <any>error);
+
+    return this.filteredSchools;
   }
+
 
   ngOnInit(): void {
     this._schoolsService.getSchools()
       .subscribe(schools => {
+        this.schools.map(e => e.Checked = false);
         this.schools = schools.sort();
-        this.filteredSchools = this.schools.slice(0, 10);
+        this.filteredSchools = this.schools;
       },
         error => this.errorMessage = <any>error);
   }

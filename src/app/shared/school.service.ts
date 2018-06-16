@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
-import { map, tap, catchError } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
-import { FUNCTION_TYPE } from '@angular/compiler/src/output/output_ast';
+
+
 import { ISchools } from '../shared/school';
 
 @Injectable({
@@ -12,29 +13,46 @@ import { ISchools } from '../shared/school';
 })
 
 export class SchoolService {
-  private _Url = 'assets/datasets/Merged-Data.JSON';
+  private _Url = '/api/get';
   constructor(private _http: HttpClient) { }
 
-  getSchools(): Observable<ISchools[]> {
-    return this._http.get<ISchools[]>(this._Url).pipe(
-      map(function(e) {
-        return e.map( function(obj) {
-          obj.Checked = false;
-          return obj;
-        });
+
+  getSchools(name?: string): Observable<ISchools[]> {
+
+    if (name && name.length > 0) {
+      const _UrlFilter = this._Url + '/' + name;
+      return this._http.get<ISchools[]>(_UrlFilter).pipe(
+        map(function (e) {
+          return e;
+        }),
+        catchError(this.handleError));
+    } else {
+      return this._http.get<ISchools[]>(this._Url).pipe(
+        map(function (e) {
+          return e;
+        }),
+        catchError(this.handleError));
+    }
+
+  }
+
+  getSchoolDetails(id: string): Observable<ISchools> {
+    const _UrlFilter = this._Url + 'ID/' + id;
+    return this._http.get<ISchools>(_UrlFilter).pipe(
+      map(function (e) {
+        return e;
       }),
-    catchError(this.handleError));
+      catchError(this.handleError));
   }
 
-  getSchoolDetails(id: string): Observable < ISchools > {
-    return this.getSchools().pipe(
-      map((school: ISchools[]) => school.find(s => s.AgeID.toString() === id)));
-  }
-
-  getSchoolCompareDetails(id1: string, id2: string, id3?: string, id4?: string): Observable < ISchools[] > {
-    return this.getSchools().pipe(
-      map((school: ISchools[]) => school.filter(s => s.AgeID.toString() === id1 ||
-        s.AgeID.toString() === id2 || s.AgeID.toString() === id3 || s.AgeID.toString() === id4)));
+  getSchoolCompareDetails(id: string[]): Observable<ISchools[]> {
+    id.join();
+    const _UrlFilter = this._Url + 'ID/multi/' + id;
+    return this._http.get<ISchools[]>(_UrlFilter).pipe(
+      map(function (e) {
+        return e;
+      }),
+      catchError(this.handleError));
   }
 
   private handleError(err) {

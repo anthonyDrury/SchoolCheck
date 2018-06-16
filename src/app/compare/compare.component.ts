@@ -20,14 +20,13 @@ export class CompareComponent implements OnInit {
   ngOnInit() {
     const param = this._route.snapshot.paramMap.get('id').split('&');
     if (param) {
-      const id = param;
-      this.getSchoolCompareDetails(param[0], param[1], param[2], param[3]);
+      this.getSchoolCompareDetails(param);
     }
   }
 
 
-  getSchoolCompareDetails(id1: string, id2: string, id3?: string, id4?: string): void {
-    this._SchoolService.getSchoolCompareDetails(id1, id2, id3, id4)
+  getSchoolCompareDetails(id: string[]): void {
+    this._SchoolService.getSchoolCompareDetails(id)
     .subscribe(
       school => {
         this.schoolCompareDetails = school;
