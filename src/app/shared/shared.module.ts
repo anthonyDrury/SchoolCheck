@@ -4,7 +4,7 @@ import { FormsModule} from '@angular/forms';
 import { SchoolService } from './school.service';
 import { CoEdPipe } from '../shared/co-ed.pipe';
 import { NoDataPipe } from './no-data.pipe';
-import { FooterComponent } from '../footer/footer.component';
+import { RouterLinkActive } from '@angular/router';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { FooterComponent } from '../footer/footer.component';
   exports: [
     FormsModule,
     CoEdPipe,
-    NoDataPipe,
+    NoDataPipe
   ],
   providers: [
     SchoolService

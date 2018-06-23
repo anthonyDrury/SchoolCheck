@@ -1,18 +1,9 @@
-.school__footer {
-    background-color: #092974;
-    margin-top: 20px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-.school__footer--menu {
+.school__header--menu {
     display: flex;
     justify-content: space-evenly;
     background-color: black;
     min-height: 40px;
-    .school__footer--menuItem {
+    .school__header--menuItem {
         display: block;
         padding: 5px;
         color: white;
@@ -37,12 +28,12 @@
     text-decoration: underline;
 }
 
-.school__footer--footNote {
+.school__header--footNote {
     text-align: center;
 }
 
 @media (max-width: 768px) {
-    .school__footer--menuItem {
+    .school__header--menuItem {
         padding: 0 5px;
     }
 }

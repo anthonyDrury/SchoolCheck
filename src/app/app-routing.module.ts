@@ -8,19 +8,25 @@ import { SchoolDetailGuardService } from './school-detail/school-detail-guard.se
 import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  {
+    path: '', component: HomeComponent,
+    data: { title: 'Compare NSW Schools' }
+  },
   {
     path: 'about',
-    component: AboutUsComponent
+    component: AboutUsComponent,
+    data: { title: 'About Us' }
   },
   {
     path: 'school/:id',
-    canActivate: [ SchoolDetailGuardService ],
-    component: SchoolDetailComponent
+    canActivate: [SchoolDetailGuardService],
+    component: SchoolDetailComponent,
+    data: { title: 'School Details' }
   },
   {
     path: 'compare/:id',
-    component: CompareComponent
+    component: CompareComponent,
+    data: { title: 'Compare Schools' }
   },
   { path: '404', component: ErrorComponent },
   { path: '**', component: ErrorComponent }

@@ -1,15 +1,12 @@
 <div class="container school__footer">
   <div class="row">
     <div class="col-12 school__footer--menu">
-      <a routerLink="/about/" class="school__footer--menuItem">
-        About Us
-      </a>
-      <a href="https://github.com/anthonyDrury/SchoolCheck" class="school__footer--menuItem">
-        Github Page
-      </a>
-      <!-- <a class="school__footer--menuItem">
-        Contact Us
-      </a> -->
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="school__footer--menuItem">
+          Home
+        </a>
+        <a routerLink="/about/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="school__footer--menuItem">
+          About Us
+        </a>
     </div>
     <div class="col-12 school__footer--footNote">
       <p>
